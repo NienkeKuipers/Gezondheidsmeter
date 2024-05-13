@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registreer</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="/index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="/assets/pages/inlogpagina.php">Login</a></li>
             <li><a href="/assets/pages/registreerpagina.php">Register</a></li>
         </ul>
