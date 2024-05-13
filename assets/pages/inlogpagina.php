@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Login to Gezondheidsmeter</h1>
+        <h1>Login Gezondheidsmeter</h1>
     </header>
     <nav>
         <ul>
@@ -19,13 +19,19 @@
     </nav>
     <main>
         <form action="process_login.php" method="POST">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" value="Login">
-            <p>Heb je geen account ? <a href="registreerpagina.php">klik hier</a> voor registreren.</p>
+            <div class="oval-input">
+                <span class="icon">&#9993; email adress</span>
+                <input type="text" id="email" name="email" placeholder="Email adres" required>
+            </div>
+            <br>
+            <div class="oval-input">
+                <span class="icon">&#128274; Wachtwoord</span>
+                <input type="password" id="password" name="password" placeholder="Wachtwoord" required>
+            </div>
+            <br>
+            <input type="submit" value="Log in">
         </form>
+        <p>Nog geen account? <a href="registreerpagina.php">Registreer</a></p>
     </main>
     <footer>
         <p>&copy; 2024 Gezondheidsmeter. All rights reserved.</p>
