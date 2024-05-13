@@ -16,7 +16,7 @@ session_destroy();
     <title>Sign out</title>
     <script>
         // Clear browser history to prevent back navigation
-        window.location.replace("/index.php");
+        window.location.replace("index.php");
     </script>
 </head>
 <body>

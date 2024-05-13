@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registreer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
     <header>
@@ -12,9 +12,9 @@
     </header>
     <nav>
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="/assets/pages/inlogpagina.php">Login</a></li>
-            <li><a href="/assets/pages/registreerpagina.php">Register</a></li>
+            <li><a href="../../index.php">Home</a></li>
+            <li><a href="inlogpagina.php">Login</a></li>
+            <li><a href="registreerpagina.php">Register</a></li>
         </ul>
     </nav>
     <main>
@@ -28,7 +28,7 @@
             <label for="confirm_password">Confirm Password:</label><br>
             <input type="password" id="confirm_password" name="confirm_password" required><br><br>
             <input type="submit" value="Registreer">
-            <p>Heb je al een account ? <a href="/assets/pages/inlogpagina.php">Login hier</a>.</p>
+            <p>Heb je al een account ? <a href="inlogpagina.php">Login hier</a>.</p>
         </form>
         
     </main>
