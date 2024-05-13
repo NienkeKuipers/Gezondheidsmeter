@@ -14,8 +14,8 @@
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="inlogpagina.php">Login</a></li>
-            <li><a href="registreerpagina.php">Register</a></li>
+            <li><a href="/assets/pages/inlogpagina.php">Login</a></li>
+            <li><a href="assets/pages/registreerpagina.php">Register</a></li>
         </ul>
     </nav>
     <main>
