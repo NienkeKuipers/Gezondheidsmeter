@@ -29,7 +29,6 @@ session_start();
             <input type="submit" value="Login">
             <p>Heb je geen account? <a href="registreerpagina.php">Klik hier</a> om te registreren.</p>
         </form>
-        <p>Nog geen account? <a href="registreerpagina.php">Registreer</a></p>
     </main>
     <footer>
         <p>&copy; 2024 Gezondheidsmeter. All rights reserved.</p>
