@@ -1,6 +1,9 @@
 <?php
+// Start session
+session_start();
+
 // Database connection
-require_once 'dbconfig.php';
+require_once 'assets/includes/dbconfig.php';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,13 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verify password
         if (password_verify($password, $hashed_password)) {
             // Password is correct, log in the user
-            session_start();
             $_SESSION['user_id'] = $user_id;
             $_SESSION['username'] = $db_username;
             
             // Redirect user based on role
             if ($is_admin == 1) {
-                header("Location: Functions/Admin/dashboard.php");
+                header("Location: assets/Admin/dashboard.php");
             } else {
                 header("Location: dashboard.php");
             }
@@ -44,8 +46,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Close statement
     mysqli_stmt_close($stmt);
+}
 
-    // Close connection
-    mysqli_close($db_connection);
+// Check if logout button is clicked
+if (isset($_POST['logout'])) {
+    // Unset all session variables
+    $_SESSION = array();
+
+    // Destroy the session
+    session_destroy();
+
+    // Redirect to index.php
+    header("Location: index.php");
+    exit;
 }
 ?>
