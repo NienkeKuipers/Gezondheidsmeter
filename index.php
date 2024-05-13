@@ -9,17 +9,19 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Gezondheidsmeter</h1>
+        <h1>Welkom bij Gezondheidsmeter</h1>
+        <p>Ontdek hoe gezond je levensstijl is! Vul onze vragenlijst in en ontvang direct feedback.</p>
     </header>
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="/assets/pages/inlogpagina.php">Login</a></li>
-            <li><a href="/assets/pages/registreerpagina.php">Register</a></li>
+            <li><a href="inlogpagina.php">Login</a></li>
+            <li><a href="registreerpagina.php">Register</a></li>
         </ul>
     </nav>
     <main>
-        <!-- Your main content goes here -->
+        <img src="" alt="Placeholder Afbeelding">
+        <button class="btn-begin-hier">Begin hier</button>
     </main>
     <footer>
         <p>&copy; 2024 Gezondheidsmeter. All rights reserved.</p>
