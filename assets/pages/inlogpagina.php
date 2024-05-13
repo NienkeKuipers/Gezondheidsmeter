@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,13 +21,13 @@
         </ul>
     </nav>
     <main>
-        <form action="process_login.php" method="POST">
+        <form action="../includes/inlog.php" method="POST">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" required><br>
             <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" required><br><br>
             <input type="submit" value="Login">
-            <p>Heb je geen account ? <a href="registreerpagina.php">klik hier</a> voor registreren.</p>
+            <p>Heb je geen account? <a href="registreerpagina.php">Klik hier</a> om te registreren.</p>
         </form>
     </main>
     <footer>

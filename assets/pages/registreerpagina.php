@@ -18,7 +18,7 @@
         </ul>
     </nav>
     <main>
-        <form action="process_registration.php" method="POST">
+        <form action="../includes/registreer.php" method="POST">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" required><br>
             <label for="email">Email:</label><br>
@@ -28,9 +28,8 @@
             <label for="confirm_password">Confirm Password:</label><br>
             <input type="password" id="confirm_password" name="confirm_password" required><br><br>
             <input type="submit" value="Registreer">
-            <p>Heb je al een account ? <a href="inlogpagina.php">Login hier</a>.</p>
+            <p>Heb je al een account? <a href="inlogpagina.php">Login hier</a>.</p>
         </form>
-        
     </main>
     <footer>
         <p>&copy; 2024 Gezondheidsmeter. All rights reserved.</p>

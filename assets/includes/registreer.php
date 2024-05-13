@@ -1,44 +1,41 @@
 <?php
-// Database connection
+session_start();
 require_once 'dbconfig.php';
 
-// Check if the form is submitted
+function checkExistingUser($email, $username, $pdo) {
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
+    $stmt->execute([$username, $email]);
+    return $stmt->fetchColumn();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Validate form data (You need to implement this part)
-    // For example, check if the username and email are not already in use, and if the password matches the confirmation
-
-    // Hash password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Default value for is_admin
-    $is_admin = 0;
-
-    // Insert user into database
-    $query = "INSERT INTO users (username, email, pwd, is_admin) VALUES (?, ?, ?, ?)";
-    $stmt = mysqli_prepare($db_connection, $query);
-    mysqli_stmt_bind_param($stmt, "sssi", $username, $email, $hashed_password, $is_admin);
-    mysqli_stmt_execute($stmt);
-
-    // Check if user was successfully registered
-    if (mysqli_stmt_affected_rows($stmt) == 1) {
-        // Registration successful
-        header("Location: inlog.php"); // Redirect to login page
-        exit;
-    } else {
-        // Registration failed
-        $error_message = "Registration failed. Please try again.";
+    if ($password !== $confirm_password) {
+        die('Passwords do not match.');
     }
 
-    // Close statement
-    mysqli_stmt_close($stmt);
+    if (checkExistingUser($email, $username, $pdo)) {
+        die('Username or email already in use.');
+    }
 
-    // Close connection
-    mysqli_close($db_connection);
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+    $is_admin = 0;
+
+    try {
+        $stmt = $pdo->prepare("INSERT INTO users (username, email, pwd, is_admin) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$username, $email, $hashed_password, $is_admin]);
+        if ($stmt->rowCount() == 1) {
+            header("Location: ../pages/inlogpagina.php");
+            exit;
+        } else {
+            echo "Registration failed. Please try again.";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
 }
 ?>
