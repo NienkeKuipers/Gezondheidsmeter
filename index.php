@@ -20,7 +20,7 @@
         </ul>
     </nav>
     <main>
-        <img src="" alt="Placeholder Afbeelding">
+        <img src="image/MainPage.png" alt="Main Page Afbeelding">
         <button class="btn-begin-hier">Begin hier</button>
     </main>
     <footer>

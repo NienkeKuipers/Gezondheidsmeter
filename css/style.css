@@ -1,7 +1,4 @@
 
-/* style.css */
-
-/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -21,14 +18,11 @@ header {
     text-align: center;
 }
 
-
 nav {
     background-color: #f0f0f0; 
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
-
-
 
 nav ul {
     list-style-type: none;
@@ -54,9 +48,11 @@ main {
     align-items: center; 
     height: 60vh; 
 }
+
 main img {
     display: block; 
     margin-bottom: 20px; 
+    max-width: 100%; 
 }
 
 form {
@@ -101,21 +97,11 @@ footer {
     background-color: #f0f0f0; 
     color: #333; 
     text-align: center;
-    padding: 10px;
+    padding: 20px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-
-
-header h1 {
-    color: #56C160; 
-}
-
-header p {
-    color: #736B66; 
 }
 
 .btn-begin-hier {
@@ -133,6 +119,7 @@ header p {
     background-color: #3A9A54; 
 }
 
+<<<<<<< HEAD
 .container {
     width: 80%;
     margin: 20px auto;
@@ -191,6 +178,9 @@ td {
 }
 
 /* Media Queries for responsiveness */
+=======
+
+>>>>>>> 574ad0c560caf45ddd348ee1df0f14f3ece16dad
 @media only screen and (max-width: 600px) {
     main {
         height: auto;
