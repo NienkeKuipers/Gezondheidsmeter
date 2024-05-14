@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,22 @@ session_start();
         </ul>
     </nav>
     <main>
+        <!-- Tonen van de foutmelding -->
+        <?php 
+            // Definieer een lege foutmelding
+            $error_message = "";
+
+            // Controleer of de foutmelding is ingesteld en toon deze
+            if(isset($_SESSION['error_message'])) {
+                $error_message = $_SESSION['error_message'];
+                // Maak de sessievariabele vrij
+                unset($_SESSION['error_message']);
+            }
+        ?>
+        <?php if(!empty($error_message)): ?>
+            <p style="color: red;"><?php echo $error_message; ?></p>
+        <?php endif; ?>
+
         <form action="../includes/inlog.php" method="POST">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" required><br>
@@ -30,6 +46,7 @@ session_start();
             <p>Heb je geen account? <a href="registreerpagina.php">Klik hier</a> om te registreren.</p>
         </form>
     </main>
+
     <footer>
         <p>&copy; 2024 Gezondheidsmeter. All rights reserved.</p>
     </footer>

@@ -23,7 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit;
         } else {
-            $error_message = "Incorrect username or password.";
+            // Foutmelding instellen als de inloggegevens onjuist zijn
+            // $error_message = "Incorrect username or password.";
+            $_SESSION['error_message'] = "Incorrect username or password.";
+            // Redirect naar inlogpagina.php
+            header("Location: ../pages/inlogpagina.php");
+            exit;
         }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
