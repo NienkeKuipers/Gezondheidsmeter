@@ -1,3 +1,4 @@
+/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -44,14 +45,14 @@ nav ul li a {
 }
 
 table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
 }
 
 table, th, td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 th {
@@ -83,4 +84,51 @@ th {
 
 .btn-danger:hover {
     background-color: #da190b;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 10px; /* Verklein de padding van de header */
+    }
+
+    .nav-links {
+        display: none; /* Verberg de navigatielinks */
+    }
+
+    .burger {
+        display: block; /* Toon de hamburgerknop */
+    }
+
+    .toggle .nav-links {
+        display: block; /* Toon de navigatielinks wanneer het hamburgermenu is uitgeklapt */
+    }
+
+    .burger .line1,
+    .burger .line2,
+    .burger .line3 {
+        width: 25px; /* Pas de breedte van de hamburgerlijnen aan */
+    }
+
+    .container {
+        margin-top: 50px; /* Voeg extra marge toe aan de container voor betere leesbaarheid */
+    }
+
+    table,
+    th,
+    td {
+        display: block;
+        width: 90%; /* Maak de tabel 100% breed */
+        margin: 0 auto; /* Centreer de tabel op de pagina */
+        background-color: #fff; /* Behoud de witte achtergrondkleur */
+        border-radius: 8px; /* Voeg afgeronde hoeken toe aan de tabel */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Voeg een subtiele schaduw toe aan de tabel */
+        padding: 20px; /* Voeg wat ruimte toe rondom de tabelinhoud */
+    }
+
+    .btn {
+        display: block;
+        width: 100%; /* Maak de knop 100% breed */
+        margin: 20px auto; /* Centreer de knoppen op de pagina */
+    }
 }

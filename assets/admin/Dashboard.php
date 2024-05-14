@@ -22,20 +22,27 @@ try {
 </head>
 <body>
 <header>
+    <div class="container">
         <nav>
-            <ul>
-                <li><a href="Dashboard.php">Dashboard</a></li>
-                <li><a href="vragen.php">Vragen Beheren</a></li>
-                <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
+            <ul class="nav-links">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Vragen</a></li>
+                <li><a href="#">Uitloggen</a></li>
             </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </nav>
-    </header>
+    </div>
+</header>
+
     <div class="container">
         <h2>Admin Dashboard</h2>
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Action</th>
@@ -44,7 +51,6 @@ try {
             <tbody>
                 <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?php echo $user['id']; ?></td>
                         <td><?php echo $user['username']; ?></td>
                         <td><?php echo $user['email']; ?></td>
                         <td>
@@ -57,4 +63,15 @@ try {
         </table>
     </div>
 </body>
+<script>
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+    console.log('Burger menu clicked'); // Controleren of de klikgebeurtenis wordt gedetecteerd
+    navLinks.classList.toggle('toggle');
+});
+
+
+</script>
 </html>
