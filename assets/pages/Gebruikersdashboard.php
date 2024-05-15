@@ -11,11 +11,11 @@
     <div id="app">
         <div class="side-bar">
             <ul>
-                <li>Dashboard</li>
-                <li>Vragenlijst</li>
-                <li>Resultaten</li>
-                <li>Account</li>
-                <li>Instellingen</li>
+                <li><a href="gebruikersdashboard.php">Dashboard</a></li>
+                <li><a href="gebruikerstest.php">Vragenlijst</a></li>
+                <li><a href="gebruikersresultaten.php">Resultaten</a></li>
+                <li><a href="gebruikersaccount.php">Account</a></li>
+                <li><a href="gebruikersinstellingen.php">Instellingen</a></li>
                 <li id="logoutItem" style="cursor: pointer;">Uitloggen</li>
             </ul>
         </div>
