@@ -38,9 +38,7 @@ nav ul li a {
     transition: color 0.3s; 
 }
 
-nav ul li a.register {
-    color: #ff7f00; /* Oranje kleur voor de "Register" link */
-}
+
 
 nav ul li a:hover {
     color: #666; 
@@ -54,7 +52,7 @@ nav ul li a:hover {
     font-size: 23px;
 }
 
-.un, .pass {
+.un, .pass  {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -68,10 +66,12 @@ nav ul li a:hover {
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 27px;
-    margin-left: 46px;
+    margin-left: auto; 
+    margin-right: auto; 
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
 }
+
 
 .un:focus, .pass:focus {
     border: 2px solid rgba(0, 0, 0, 0.18) !important;
@@ -79,25 +79,73 @@ nav ul li a:hover {
 
 .submit {
     cursor: pointer;
-    border-radius: 5em;
+    border-radius: 20px; 
     color: #FFFFFF; 
     background: linear-gradient(to right, #44AE62, #4CC17B); 
     border: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px 30px; 
     font-family: 'Ubuntu', sans-serif;
-    margin-left: 35%;
-    font-size: 13px;
+    margin-top: 20px; 
+    font-size: 16px; 
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
+
 
 .forgot, a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
     color: #736B66; 
     padding-top: 15px;
 }
+
+
+form.form1 {
+    padding-top: 40px;
+    text-align: center; 
+}
+
+form.form1 input {
+    width: 300px; 
+    height: 40px; 
+    margin-bottom: 20px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border: none; 
+    border-radius: 20px; 
+    outline: none; 
+    box-sizing: border-box;
+}
+
+form.form1 button {
+    width: 300px; 
+    height: 40px; 
+    margin-top: 20px; 
+    background-color: #44AE62; 
+    color: #fff; 
+    border: none; 
+    border-radius: 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    outline: none; 
+}
+
+form.form1 button:hover {
+    background-color: #3d8e4d; /* Achtergrondkleur van de knop bij hover */
+}
+
+form.form1 p {
+    font-size: 14px; /* Tekstgrootte van de paragraaf */
+    margin-top: 15px; /* Ruimte boven de paragraaf */
+}
+
+form.form1 p a {
+    color: #44AE62; /* Tekstkleur van de link */
+    text-decoration: none; /* Verwijder onderstreping van de link */
+}
+
+
 
 
 @media (max-width: 600px) {

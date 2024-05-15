@@ -38,10 +38,10 @@
             <p style="color: red;" align="center"><?php echo $error_message; ?></p>
         <?php endif; ?>
         <form class="form1" action="../includes/inlog.php" method="POST">
-            <input class="un " type="text" align="center" placeholder="Username" name="username" required>
-            <input class="pass" type="password" align="center" placeholder="Password" name="password" required>
-            <button class="submit" align="center" type="submit">Login</button>
-            <p class="forgot" align="center"><a href="#">Heb je nog een account registreer?</a></p>
+            <input class="un " type="text"  placeholder="Username" name="username" required>
+            <input class="pass" type="password" placeholder="Password" name="password" required>
+            <button class="submit"  type="submit">Login</button>
+            <p class="forgot">Heb je nog geen acount? <a href="registreerpagina.php">Registreer hier</a>.</p>
         </form>
     </div>
 </body>
