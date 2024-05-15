@@ -12,10 +12,10 @@
         <div class="side-bar">
             <ul>
                 <li>Dashboard</li>
-                <li>Reports</li>
-                <li>Projects</li>
-                <li>Analytics</li>
-                <li>Settings</li>
+                <li>Vragenlijst</li>
+                <li>Resultaten</li>
+                <li>Account</li>
+                <li>Instellingen</li>
                 <li id="logoutItem" style="cursor: pointer;">Uitloggen</li>
             </ul>
         </div>
