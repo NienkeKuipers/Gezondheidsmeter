@@ -38,6 +38,9 @@ nav ul li a {
     transition: color 0.3s; 
 }
 
+nav ul li a.register {
+    color: #ff7f00; /* Oranje kleur voor de "Register" link */
+}
 
 nav ul li a:hover {
     color: #666; 
@@ -51,7 +54,7 @@ nav ul li a:hover {
     font-size: 23px;
 }
 
-.username, .pass {
+.un, .pass {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -70,7 +73,7 @@ nav ul li a:hover {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.username:focus, .pass:focus {
+.un:focus, .pass:focus {
     border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
 
