@@ -3,25 +3,26 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inlogpagina</title>
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header>
-        <h1>Login Gezondheidsmeter</h1>
-    </header>
-    <nav>
+<nav>
         <ul>
             <li><a href="../../index.php">Home</a></li>
-            <li><a href="inlogpagina.php">Login</a></li>
             <li><a href="registreerpagina.php">Register</a></li>
         </ul>
     </nav>
-    <main>
-        <!-- Tonen van de foutmelding -->
+    <div class="main">
+        <p class="sign" align="center">Login</p>
         <?php 
             // Definieer een lege foutmelding
             $error_message = "";
@@ -34,21 +35,15 @@
             }
         ?>
         <?php if(!empty($error_message)): ?>
-            <p style="color: red;"><?php echo $error_message; ?></p>
+            <p style="color: red;" align="center"><?php echo $error_message; ?></p>
         <?php endif; ?>
-
-        <form action="../includes/inlog.php" method="POST">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username" required><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" required><br><br>
-            <input type="submit" value="Login">
-            <p>Heb je geen account? <a href="registreerpagina.php">Klik hier</a> om te registreren.</p>
+        <form class="form1" action="../includes/inlog.php" method="POST">
+            <input class="username " type="text" align="center" placeholder="Username" name="username" required>
+            <input class="pass" type="password" align="center" placeholder="Password" name="password" required>
+            <button class="submit" align="center" type="submit">Login</button>
+            <p class="forgot" align="center"><a href="#">Heb je nog een account registreer?</a></p>
         </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Gezondheidsmeter. All rights reserved.</p>
-    </footer>
+    </div>
 </body>
+
 </html>
