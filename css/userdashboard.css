@@ -4,27 +4,35 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 html, body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
+
 #app {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh; 
 }
+
 .side-bar {
   background: #171716;
   width: 260px;
   padding: 20px;
   box-sizing: border-box;
-  position: relative;
+  position: fixed; 
+  top: 0;
+  bottom: 0; 
+  left: 0;
 }
+
 .side-bar ul {
   padding: 0;
   margin: 0;
 }
+
 .side-bar ul li {
   list-style: none;
   padding: 20px 20px;
@@ -36,39 +44,42 @@ html, body {
   transition: .1s ease;
   border-radius: 2px;
 }
+
 .side-bar ul li:hover {
   color: #fff;
   background: #282828;
   letter-spacing: 1px;
 }
+
 .side-bar ul li a {
-  text-decoration: none; /* Verwijder onderstreping */
-  color: inherit; /* Gebruik de kleur van het ouder-element */
+  text-decoration: none; 
+  color: inherit; 
 }
+
 .main {
   display: flex;
-  position: relative;
   flex-direction: column;
-  width: 100%;
+  margin-left: 260px;
+  width: 100%; 
 }
+
 .nav-bar {
   display: flex;
-  position: relative;
   align-items: center;
   padding: 0px 30px;
   box-sizing: border-box;
-  width: 100%;
   height: 72px;
   background: white;
   border-bottom: 1px solid #e0e0e0;
 }
+
 .content {
+  flex: 1;
   padding: 20px;
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
   background: #f2f1ed;
 }
+
 h1 {
   margin: 0;
 }
