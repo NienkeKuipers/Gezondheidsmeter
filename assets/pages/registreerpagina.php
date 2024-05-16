@@ -18,7 +18,7 @@
 </nav>
 <div class="main">
     <p class="sign" align="center">Registreer</p>
-    <form class="form1" action="../includes/registreerpagina.php" method="POST">
+    <form class="form1" action="../includes/registreer.php" method="POST">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br>
 

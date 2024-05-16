@@ -47,12 +47,13 @@ main {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    height: 60vh; 
+    height: calc(100vh - 230px); 
 }
 
 main img {
     display: block; 
     margin-bottom: 20px; 
+    max-width: 100%; 
 }
 
 .btn-begin-hier {
@@ -81,15 +82,37 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Media Queries voor responsiviteit */
 @media only screen and (max-width: 600px) {
     main {
-        height: auto; 
+        height: auto;
+        padding-top: 50px; 
     }
 
-    form {
-        width: 90%; 
-        max-width: none; 
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 10px;
+    }
+
+    header h1 {
+        font-size: 24px; 
+    }
+
+    header p {
+        font-size: 14px; 
+    }
+
+    main img {
+        margin-bottom: 10px; 
+    }
+
+    .btn-begin-hier {
+        padding: 15px 30px;
+        margin-top: 60px;
+        font-size: 14px; 
     }
 }
-
