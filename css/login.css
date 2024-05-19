@@ -1,59 +1,62 @@
 body {
     background-color: #F2F5F9; 
     font-family: 'Ubuntu', sans-serif;
+    margin: 0;
 }
+
+.green-top {
+    background: #44AE62;
+    height: 100px; /* Adjust height as needed */
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* Adjust height to account for green top part */
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .main {
-    background-color: #FFFFFF;
-    width: 400px;
-    height: 400px;
-    margin: 7em auto;
-    border-radius: 1.5em;
-    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
-}
-
-nav {
-    background-color: #f9f9f9; 
-    padding: 10px 0; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-nav ul {
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
-    text-align: center; 
-}
-
-nav ul li {
-    display: inline; 
-    margin-right: 20px; 
-}
-
-nav ul li a {
-    color: #333; 
-    text-decoration: none; 
-    font-size: 16px; 
-    font-family: 'Ubuntu', sans-serif; 
-    transition: color 0.3s; 
-}
-
-
-
-nav ul li a:hover {
-    color: #666; 
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
 }
 
 .sign {
-    padding-top: 40px;
-    color: #4F3422; 
+    padding-top: 20px;
+    color: #4F3422;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: 23px;
+    margin-bottom: 20px;
 }
 
-.un, .pass  {
-    width: 76%;
+label {
+    display: block;
+    text-align: left;
+    width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    color: #4F3422;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.un, .pass {
+    width: 80%;
     color: rgb(38, 50, 56);
     font-weight: 700;
     font-size: 14px;
@@ -72,7 +75,6 @@ nav ul li a:hover {
     font-family: 'Ubuntu', sans-serif;
 }
 
-
 .un:focus, .pass:focus {
     border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
@@ -88,11 +90,20 @@ nav ul li a:hover {
     margin-top: 20px; 
     font-size: 16px; 
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    display: block; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
     margin-left: auto; 
     margin-right: auto; 
 }
 
+.arrow-right {
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+
+.submit:hover {
+    background-color: #3d8e4d;
+}
 
 .forgot, a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
@@ -100,15 +111,14 @@ nav ul li a:hover {
     padding-top: 15px;
 }
 
-
 form.form1 {
-    padding-top: 40px;
+    padding-top: 20px;
     text-align: center; 
 }
 
 form.form1 input {
-    width: 300px; 
-    height: 40px; 
+    width: 90%; 
+    height: 45px; 
     margin-bottom: 20px; 
     padding: 10px; 
     font-size: 16px; 
@@ -119,7 +129,7 @@ form.form1 input {
 }
 
 form.form1 button {
-    width: 300px; 
+    width: 90%; 
     height: 40px; 
     margin-top: 20px; 
     background-color: #44AE62; 
@@ -132,25 +142,47 @@ form.form1 button {
 }
 
 form.form1 button:hover {
-    background-color: #3d8e4d; /* Achtergrondkleur van de knop bij hover */
+    background-color: #3d8e4d; 
 }
 
 form.form1 p {
-    font-size: 14px; /* Tekstgrootte van de paragraaf */
-    margin-top: 15px; /* Ruimte boven de paragraaf */
+    padding-top: 19px;
+    font-size: 12px;
+    font-weight: 550;
+    margin-top: 15px;
 }
 
 form.form1 p a {
-    color: #44AE62; /* Tekstkleur van de link */
-    text-decoration: none; /* Verwijder onderstreping van de link */
+    color: orange;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-
-
-
-@media (max-width: 600px) {
-    .main {
-        border-radius: 0px;
+@media (max-width: 620px) {
+    .green-top {
+        height: 80px; /* Adjust height for mobile view */
     }
-    
+
+    .container {
+        height: calc(100vh - 80px); /* Adjust height to account for green top part */
+    }
+
+    .main {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border-radius: 0px;
+        margin: 0;
+        box-shadow: none;
+        margin-bottom: 70px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
 }
