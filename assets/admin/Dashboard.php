@@ -25,8 +25,8 @@ try {
     <div class="container">
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Vragen</a></li>
+                <li><a href="Dashboard.php">Dashboard</a></li>
+                <li><a href="vragen.php">Vragen</a></li>
                 <li><a href="../includes/logout.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
