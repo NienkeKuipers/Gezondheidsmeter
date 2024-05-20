@@ -1,5 +1,4 @@
 <?php
-
 include '../includes/dbconfig.php';
 
 try {
@@ -26,14 +25,14 @@ try {
     <div class="container">
         <nav>
             <ul class="nav-links">
-                <li><a href="Dashboard.php">Dashboard</a></li>
-                <li><a href="vragen.php">Vragen</a></li>
-                <li id="logoutItem" style="cursor: pointer;">Uitloggen</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Vragen</a></li>
+                <li><a href="../includes/logout.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
-                <div class="line3"></div>   
+                <div class="line3"></div>
             </div>
         </nav>
     </div>
@@ -55,7 +54,7 @@ try {
                         <td><?php echo $user['username']; ?></td>
                         <td><?php echo $user['email']; ?></td>
                         <td>
-                            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="../includes/edit.php?id=<?php echo $user['id']; ?>" class="btn btn-primary">Edit</a>
                             <a href="../includes/delete.php?id=<?php echo $user['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
                         </td>
                     </tr>
@@ -65,32 +64,11 @@ try {
     </div>
 </body>
 <script>
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
 
-burger.addEventListener('click', () => {
-    console.log('Burger menu clicked'); // Controleren of de klikgebeurtenis wordt gedetecteerd
-    navLinks.classList.toggle('toggle');
-});
-
-
-        // Function to handle logout action
-        function handleLogout() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "../includes/uitloggen.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Redirect to index.php after successful logout
-                    window.location.href = "../../index.php";
-                }
-            };
-            xhr.send("logout=1");
-        }
-
-        // Attach click event listener to logout list item
-        document.getElementById('logoutItem').addEventListener('click', handleLogout);
-    
-
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('toggle');
+    });
 </script>
 </html>
