@@ -43,16 +43,16 @@ try {
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Question</th>
-                    <th>Pillar</th>
+                    
+                    <th>Vragen</th>
+                    <th>Onderwerp</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($questions as $question): ?>
                     <tr>
-                        <td><?php echo $question['id']; ?></td>
+                        
                         <td><?php echo $question['text']; ?></td>
                         <td><?php echo $question['pillar_name']; ?></td>
                         <td>
