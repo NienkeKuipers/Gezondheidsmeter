@@ -38,33 +38,30 @@ try {
     </div>
 </header>
 
-    <div class="container">
-        <h2>Questions Management</h2>
-        <table>
-            <thead>
+<div class="container">
+    <h2>Questions Management</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Vragen</th>
+                <th>Onderwerp</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($questions as $question): ?>
                 <tr>
-                    
-                    <th>Vragen</th>
-                    <th>Onderwerp</th>
-                    <th>Action</th>
+                    <td data-label="Vragen"><?php echo htmlspecialchars($question['text']); ?></td>
+                    <td data-label="Onderwerp"><?php echo htmlspecialchars($question['pillar_name']); ?></td>
+                    <td data-label="Action">
+                        <a href="edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
+                        <a href="delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($questions as $question): ?>
-                    <tr>
-                        
-                        <td><?php echo $question['text']; ?></td>
-                        <td><?php echo $question['pillar_name']; ?></td>
-                        <td>
-                            <a href="edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
-                            <a href="delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-</body>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 <script>
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
@@ -73,4 +70,5 @@ try {
         navLinks.classList.toggle('toggle');
     });
 </script>
+</body>
 </html>
