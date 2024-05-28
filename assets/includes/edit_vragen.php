@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
             <ul class="nav-links">
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="vragen.php">Vragen</a></li>
-                <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
+                <li><a href="../includes/logout.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>

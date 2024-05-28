@@ -27,7 +27,7 @@ try {
             <ul class="nav-links">
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="vragen.php">Vragen</a></li>
-                <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
+                <li><a href="../includes/logout.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -38,20 +38,11 @@ try {
     </div>
 </header>
 
-<div class="container">
-    <h2>Questions Management</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Vragen</th>
-                <th>Onderwerp</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($questions as $question): ?>
+    <div class="container">
+        <h2>Questions Management</h2>
+        <table>
+            <thead>
                 <tr>
-<<<<<<< HEAD
                     
                     <th>Question</th>
                     <th>Pillar</th>
@@ -66,7 +57,7 @@ try {
                         <td><?php echo $question['pillar_name']; ?></td>
                         <td>
                             <a href="../includes/edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
-                            <a href="delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
+                            <a href="../includes/delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -74,19 +65,6 @@ try {
         </table>
     </div>
 </body>
-=======
-                    <td data-label="Vragen"><?php echo htmlspecialchars($question['text']); ?></td>
-                    <td data-label="Onderwerp"><?php echo htmlspecialchars($question['pillar_name']); ?></td>
-                    <td data-label="Action">
-                        <a href="edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
-                        <a href="delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
->>>>>>> 1622eb5de19fbf936265e129402921ab5acfcb47
 <script>
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
@@ -95,5 +73,4 @@ try {
         navLinks.classList.toggle('toggle');
     });
 </script>
-</body>
 </html>
