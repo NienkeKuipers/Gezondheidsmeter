@@ -1,4 +1,3 @@
-/* Reset default margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -12,51 +11,79 @@ body {
 }
 
 header {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     color: #333;
     padding: 20px;
     text-align: center;
 }
 
 nav {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
 nav ul li a {
-    color: #736B66; 
+    color: #736B66;
     text-decoration: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
 }
 
 .container {
     margin-top: 20px;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 table {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 table, th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+    word-break: break-word; 
 }
 
 th {
     background-color: #f2f2f2;
+}
+
+td {
+    white-space: normal;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
 }
 
 .btn {
@@ -86,49 +113,73 @@ th {
     background-color: #da190b;
 }
 
-/* Media queries for responsiveness */
 @media only screen and (max-width: 600px) {
-    header {
-        padding: 10px; /* Verklein de padding van de header */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #f0f0f0;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px;
     }
 
-    .nav-links {
-        display: none; /* Verberg de navigatielinks */
+    nav ul.toggle {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        color: #333;
     }
 
     .burger {
-        display: block; /* Toon de hamburgerknop */
-    }
-
-    .toggle .nav-links {
-        display: block; /* Toon de navigatielinks wanneer het hamburgermenu is uitgeklapt */
-    }
-
-    .burger .line1,
-    .burger .line2,
-    .burger .line3 {
-        width: 25px; /* Pas de breedte van de hamburgerlijnen aan */
+        display: block;
     }
 
     .container {
-        margin-top: 50px; /* Voeg extra marge toe aan de container voor betere leesbaarheid */
+        margin-top: 20px;
+        padding: 10px;
     }
 
-    table,
-    th,
-    td {
+    table, thead, tbody, th, td, tr {
         display: block;
-        width: 90%; /* Maak de tabel 100% breed */
-        margin: 0 auto; /* Centreer de tabel op de pagina */
-        background-color: #fff; /* Behoud de witte achtergrondkleur */
-        border-radius: 8px; /* Voeg afgeronde hoeken toe aan de tabel */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Voeg een subtiele schaduw toe aan de tabel */
-        padding: 20px; /* Voeg wat ruimte toe rondom de tabelinhoud */
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 50%;
+        padding-right: 10px;
+        text-align: left;
+        font-weight: bold;
     }
 
     .btn {
         display: block;
-        width: 100%; /* Maak de knop 100% breed */
-        margin: 20px auto; /* Centreer de knoppen op de pagina */
+        width: 100%;
+        margin: 10px 0;
     }
 }

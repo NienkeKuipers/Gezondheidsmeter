@@ -38,31 +38,30 @@ try {
     </div>
 </header>
 
-    <div class="container">
-        <h2>Admin Dashboard</h2>
-        <table>
-            <thead>
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user): ?>
                 <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Action</th>
+                    <td data-label="Username"><?php echo $user['username']; ?></td>
+                    <td data-label="Email"><?php echo $user['email']; ?></td>
+                    <td data-label="Action">
+                        <a href="../includes/edit.php?id=<?php echo $user['id']; ?>" class="btn btn-primary">Edit</a>
+                        <a href="../includes/delete.php?id=<?php echo $user['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($users as $user): ?>
-                    <tr>
-                        <td><?php echo $user['username']; ?></td>
-                        <td><?php echo $user['email']; ?></td>
-                        <td>
-                            <a href="../includes/edit.php?id=<?php echo $user['id']; ?>" class="btn btn-primary">Edit</a>
-                            <a href="../includes/delete.php?id=<?php echo $user['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-</body>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 <script>
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
@@ -71,4 +70,5 @@ try {
         navLinks.classList.toggle('toggle');
     });
 </script>
+</body>
 </html>
