@@ -48,8 +48,8 @@ if (isset($_GET['id'])) {
     <div class="container">
         <nav>
             <ul class="nav-links">
-                <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="vragen.php">Vragen</a></li>
+                <li><a href="../admin/dashboard.php">Dashboard</a></li>
+                <li><a href="../admin/vragen.php">Vragen</a></li>
                 <li><a href="../includes/logout.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
@@ -62,15 +62,15 @@ if (isset($_GET['id'])) {
 </header>
 
 <div class="container">
-    <h2>Edit Question</h2>
+    <h2>Bewerk Vraag</h2>
     <form action="update_question.php" method="post">
         <input type="hidden" name="id" value="<?php echo $questionId; ?>">
         <div class="form-group">
-            <label for="text">Question:</label>
+            <label for="text">Vragen:</label>
             <textarea id="text" name="text" required><?php echo htmlspecialchars($question['text']); ?></textarea>
         </div>
         <div class="form-group">
-            <label for="pillar_id">Pillar:</label>
+            <label for="pillar_id">Onderwerp:</label>
             <select id="pillar_id" name="pillar_id" required>
                 <?php foreach ($pillars as $pillar): ?>
                     <option value="<?php echo $pillar['id']; ?>" <?php echo $pillar['id'] == $question['pillar_id'] ? 'selected' : ''; ?>>
@@ -81,12 +81,12 @@ if (isset($_GET['id'])) {
         </div>
 
         <div class="options-container">
-            <h3>Options</h3>
+            <h3>Opties</h3>
             <?php foreach ($options as $option): ?>
                 <div class="form-group">
-                    <label for="option_<?php echo $option['id']; ?>">Option:</label>
+                    <label for="option_<?php echo $option['id']; ?>">Opties:</label>
                     <input type="text" id="option_<?php echo $option['id']; ?>" name="options[<?php echo $option['id']; ?>][text]" value="<?php echo htmlspecialchars($option['text']); ?>" required>
-                    <label for="points_<?php echo $option['id']; ?>">Points:</label>
+                    <label for="points_<?php echo $option['id']; ?>">Punten:</label>
                     <input type="number" id="points_<?php echo $option['id']; ?>" name="options[<?php echo $option['id']; ?>][points]" value="<?php echo htmlspecialchars($option['points']); ?>" required>
                 </div>
             <?php endforeach; ?>
