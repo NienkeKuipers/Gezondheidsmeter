@@ -27,7 +27,7 @@ try {
             <ul class="nav-links">
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="vragen.php">Vragen</a></li>
-                <li><a href="../includes/logout.php">Uitloggen</a></li>
+                <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -43,7 +43,7 @@ try {
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    
                     <th>Question</th>
                     <th>Pillar</th>
                     <th>Action</th>
@@ -52,11 +52,11 @@ try {
             <tbody>
                 <?php foreach ($questions as $question): ?>
                     <tr>
-                        <td><?php echo $question['id']; ?></td>
+                        
                         <td><?php echo $question['text']; ?></td>
                         <td><?php echo $question['pillar_name']; ?></td>
                         <td>
-                            <a href="edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
+                            <a href="../includes/edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
                             <a href="delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
                         </td>
                     </tr>

@@ -19,6 +19,11 @@ if (isset($_GET['id'])) {
         $stmtPillars = $pdo->prepare("SELECT id, name FROM health_pillars");
         $stmtPillars->execute();
         $pillars = $stmtPillars->fetchAll(PDO::FETCH_ASSOC);
+
+        // Fetch options for the question
+        $stmtOptions = $pdo->prepare("SELECT id, text, points FROM options WHERE question_id = ?");
+        $stmtOptions->execute([$questionId]);
+        $options = $stmtOptions->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Error fetching question details: " . $e->getMessage();
         exit;
@@ -36,6 +41,7 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Question</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/edit_question.css">
 </head>
 <body>
 <header>
@@ -44,7 +50,7 @@ if (isset($_GET['id'])) {
             <ul class="nav-links">
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="vragen.php">Vragen</a></li>
-                <li><a href="../includes/logout.php">Uitloggen</a></li>
+                <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -73,6 +79,19 @@ if (isset($_GET['id'])) {
                 <?php endforeach; ?>
             </select>
         </div>
+
+        <div class="options-container">
+            <h3>Options</h3>
+            <?php foreach ($options as $option): ?>
+                <div class="form-group">
+                    <label for="option_<?php echo $option['id']; ?>">Option:</label>
+                    <input type="text" id="option_<?php echo $option['id']; ?>" name="options[<?php echo $option['id']; ?>][text]" value="<?php echo htmlspecialchars($option['text']); ?>" required>
+                    <label for="points_<?php echo $option['id']; ?>">Points:</label>
+                    <input type="number" id="points_<?php echo $option['id']; ?>" name="options[<?php echo $option['id']; ?>][points]" value="<?php echo htmlspecialchars($option['points']); ?>" required>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
