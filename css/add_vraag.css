@@ -1,0 +1,70 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: calc(100% - 22px); /* Geef wat ruimte aan de zijkanten */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Verdeel de ruimte tussen de knoppen */
+    align-items: center; /* Centreer verticaal */
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Blauwe achtergrondkleur */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056b3; /* Donkerdere blauwe kleur bij zweven */
+}
+
+.option-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.option-container .form-group {
+    margin-bottom: 10px;
+}
+
+.option-container .form-group:last-child {
+    margin-bottom: 0;
+}

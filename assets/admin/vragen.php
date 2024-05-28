@@ -8,7 +8,7 @@ try {
     $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     // Handle errors if query fails
-    echo "Error fetching questions: " . $e->getMessage();
+    echo "Fout bij het ophalen van vragen: " . $e->getMessage();
 }
 ?>
 
@@ -17,8 +17,13 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions Management</title>
+    <title>Beheer van Vragen</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
+    <style>
+        .add-button {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -38,32 +43,31 @@ try {
     </div>
 </header>
 
-    <div class="container">
-        <h2>Questions Management</h2>
-        <table>
-            <thead>
+<div class="container">
+    <h2>Beheer van Vragen</h2>
+    <a href="../includes/add_vraag.php" class="btn btn-primary add-button">Vraag Toevoegen</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Vraag</th>
+                <th>Gezondheidszuil</th>
+                <th>Actie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($questions as $question): ?>
                 <tr>
-                    
-                    <th>Question</th>
-                    <th>Pillar</th>
-                    <th>Action</th>
+                    <td><?php echo $question['text']; ?></td>
+                    <td><?php echo $question['pillar_name']; ?></td>
+                    <td>
+                        <a href="../includes/edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Bewerken</a>
+                        <a href="../includes/delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Weet je zeker dat je deze vraag wilt verwijderen?')">Verwijderen</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($questions as $question): ?>
-                    <tr>
-                        
-                        <td><?php echo $question['text']; ?></td>
-                        <td><?php echo $question['pillar_name']; ?></td>
-                        <td>
-                            <a href="../includes/edit_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-primary">Edit</a>
-                            <a href="../includes/delete_vragen.php?id=<?php echo $question['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 </body>
 <script>
     const burger = document.querySelector('.burger');
