@@ -7,23 +7,44 @@
     <link rel="stylesheet" href="../../css/userdashboard.css">
 </head>
 <body>
-    <div id="app">
-        <div class="side-bar">
-            <ul>
-                <li><a href="gebruikersdashboard.php">Dashboard</a></li>
-                <li><a href="gebruikerstest.php">Vragenlijst</a></li>
-                <li><a href="gebruikersresultaten.php">Resultaten</a></li>
-                <li><a href="gebruikersaccount.php">Account</a></li>
-                <li><a href="gebruikersinstellingen.php">Instellingen</a></li>
-                <li id="logoutItem" style="cursor: pointer;">Uitloggen</li>
-            </ul>
-        </div>
-        <div class="main">
-            <div class="nav-bar"> 
-                <h1>Gezondheidsmeter</h1>
+    <?php
+        session_start();
+        // Assuming the user's name is stored in the session
+        $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest';
+    ?>
+    <div id="app" class="mobile-layout">
+        <div class="header">
+            <div class="profile-section">
+                <h2>Welkom <?php echo htmlspecialchars($username); ?></h2>
             </div>
-            <div class="content">
-                <h1>This is the content area</h1>
+
+        </div>
+        <div class="health-section">
+            <div class="health-item">Steps<br>10,000</div>
+            <div class="health-item">Calories Burned<br>500</div>
+            <div class="health-item">Water Intake<br>2L</div>
+        </div>
+        <div class="main-menu">
+            <div class="menu-item">
+                <img src="../images/check-list.png" alt="Vragenlijst">
+                <p>Vragenlijst</p>
+            </div>
+            <div class="menu-item">
+                <img src="../images/result.png" alt="Resultaten">
+                <p>Resultaten</p>
+            </div>
+            <div class="menu-item">
+                <img src="../images/user.png" alt="Account">
+                <p>Account Beheer</p>
+            </div>
+            <div class="menu-item">
+                <img src="../images/settings.png" alt="Instellingen">
+                <p>Instellingen</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <div class="button">
+                <div class="light"></div>
             </div>
         </div>
     </div>
