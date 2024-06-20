@@ -1,97 +1,49 @@
-/* Main Styles */
-.button {
-    display: block;
-    background-color: #c0392b;
-    width: 300px;
-    height: 100px;
-    line-height: 100px;
-    margin: auto;
-    color: #fff;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
-    transition: all 0.25s cubic-bezier(0.310, -0.105, 0.430, 1.400);
-    text-align: center;
+input[type="submit"] {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]::before {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -12px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: 0.8s linear infinite rotate;
+}
+
+input[type="submit"].sending {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+input[type="submit"].sending::before {
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+  opacity: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .button span,
-  .button .icon {
-    display: block;
-    height: 100%;
-    position: absolute;
-    top: 0;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .button span {
-    width: 72%;
-    line-height: inherit;
-    font-size: 22px;
-    text-transform: uppercase;
-    left: 0;
-    transition: all 0.25s cubic-bezier(0.310, -0.105, 0.430, 1.400);
-  }
-  
-  .button span:after {
-    content: '';
-    background-color: #a53125;
-    width: 2px;
-    height: 70%;
-    position: absolute;
-    top: 15%;
-    right: -1px;
-  }
-  
-  .button .icon {
-    width: 28%;
-    right: 0;
-    transition: all 0.25s cubic-bezier(0.310, -0.105, 0.430, 1.400);
-  }
-  
-  .button .icon .fa {
-    font-size: 30px;
-    vertical-align: middle;
-    transition: all 0.25s cubic-bezier(0.310, -0.105, 0.430, 1.400), height 0.25s ease;
-  }
-  
-  .button .icon .fa-remove {
-    height: 36px;
-  }
-  
-  .button .icon .fa-check {
-    display: none;
-  }
-  
-  .button.success span,
-  .button:hover span {
-    left: -72%;
-    opacity: 0;
-  }
-  
-  .button.success .icon,
-  .button:hover .icon {
-    width: 100%;
-  }
-  
-  .button.success .icon .fa {
-    font-size: 45px;
-  }
-  
-  .button.success .icon .fa-remove {
-    display: none;
-  }
-  
-  .button.success .icon .fa-check {
-    display: inline-block;
-    color: green; /* Groene kleur voor het vinkje */
-  }
-  
-  .button:hover .icon .fa-remove {
-    height: 46px;
-  }
-  
-  .button:active {
-    opacity: 1;
-  }
-  
+}

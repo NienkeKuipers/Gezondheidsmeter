@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['simple-toggle'])) {
     $updateStmt->execute([$newNotifPref, $userId]);
     $userNotifPref = $newNotifPref;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -56,69 +55,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['simple-toggle'])) {
                 <span class="switch-right">Uit</span>
             </label>
         </div>
-        <div class="button-container">
-            <a class="button" href="#" role="button">
-                <span>remove</span>
-                <div class="icon">
-                    <i class="fa fa-remove"></i>
-                    <i class="fa fa-check"></i>
-                </div>
-            </a>
-        </div>
-       
 
         <h2>Gegevens Resetten</h2>
-        <form action="gebruikersinstellingen.php" method="POST" onsubmit="return confirm('Weet je zeker dat je alle gegevens wilt resetten? Deze actie kan niet ongedaan worden gemaakt.');">
+        <form action="gebruikersinstellingen.php" method="POST" onsubmit="return confirm('Weet je zeker dat je alle gegevens wilt resetten? Deze actie kan niet ongedaan worden gemaakt.');" class="delete-form">
             <input type="hidden" name="reset_data" value="1">
-            <input type="submit" value="Reset Gegevens">
+            <input type="submit" value="Reset Gegevens" class="delete-button">
         </form>
-   
-
-
-        <div class="main-menu">
-            <div class="menu-item">
-                <img src="../images/check-list.png" alt="Vragenlijst">
-                <p>Vragenlijst</p>
-            </div>
-        </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var notifToggle = document.getElementById('notif-toggle');
 
-            notifToggle.addEventListener('change', function() {
-                var receiveNotifications = notifToggle.checked ? 1 : 0;
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "../includes/notification.php", true); // Adjusted path
-                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4) {
-                        if (xhr.status == 200) {
-                            try {
-                                var response = JSON.parse(xhr.responseText);
-                                if (response.status === 'success') {
-                                    console.log(response.message);
-                                } else {
-                                    console.error("Error: " + response.message);
-                                    alert("Error: " + response.message);
-                                }
-                            } catch (e) {
-                                console.error("Failed to parse JSON response. Error: " + e);
-                                alert("Failed to parse response.");
-                            }
-                        } else {
-                            console.error("Failed to update notification preference. Status: " + xhr.status);
-                            alert("Failed to update notification preference. Status: " + xhr.status);
-                        }
-                    }
-                };
-                xhr.send("receive_notifications=" + receiveNotifications);
-            });
+            if (notifToggle) {
+                notifToggle.addEventListener('change', function() {
+                    var receiveNotifications = notifToggle.checked ? 1 : 0;
+                    console.log('Checkbox changed, new value: ' + receiveNotifications);
 
-            // Debugging: Check if the script is running
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("POST", "../includes/notification.php", true);
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4) {
+                            if (xhr.status == 200) {
+                                try {
+                                    var response = JSON.parse(xhr.responseText);
+                                    if (response.status === 'success') {
+                                        console.log(response.message);
+                                    } else {
+                                        console.error("Error: " + response.message);
+                                        alert("Error: " + response.message);
+                                    }
+                                } catch (e) {
+                                    console.error("Failed to parse JSON response. Error: " + e);
+                                    alert("Failed to parse response.");
+                                }
+                            } else {
+                                console.error("Failed to update notification preference. Status: " + xhr.status);
+                                alert("Failed to update notification preference. Status: " + xhr.status);
+                            }
+                        }
+                    };
+                    xhr.send("receive_notifications=" + receiveNotifications);
+                });
+            } else {
+                console.error('Checkbox element not found');
+            }
             console.log("Notification script loaded. Path to notification.php: ../includes/notification.php");
         });
+
+        // document.querySelector('form.delete-form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     var but = this.querySelector('input[type="submit"]').classList.toggle('sending');
+            
+        //     setTimeout(function(){
+        //         document.querySelector('input[type="submit"]').classList.remove('sending');
+        //     }, 4500);
+        // });
     </script>
 </body>
 </html>
