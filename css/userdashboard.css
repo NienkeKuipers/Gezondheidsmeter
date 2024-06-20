@@ -9,29 +9,34 @@
 html, body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background-color: #f0f0f0;
+  background-color: #f7f4f2;
 }
 
 #app.mobile-layout {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   overflow: hidden;
+  padding: 15px 0px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
   padding-right: 16px;
-  background-color: #f0f0f0;
 }
 
 .profile-section {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.profile-section h1 {
+  color: white;
+  padding: 15px 0px;
 }
 
 .profile-image {
@@ -51,7 +56,7 @@ html, body {
 .health-section {
   display: flex;
   justify-content: space-around;
-  background-color: #25a746;
+  background-color: #44AE62;
   padding: 16px;
   color: white;
 }
@@ -67,17 +72,19 @@ html, body {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 16px;
+  margin: 10px;
 }
 
 .menu-item {
   width: 37%;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 18px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
-  padding: 16px;
+  padding: 27px 0px;
   text-align: center;
 }
+
 
 .menu-item img {
   width: 40px;
@@ -88,7 +95,8 @@ html, body {
 .menu-item p {
   margin: 0;
   font-size: 14px;
-  color: #333;
+  color: black;
+  font-weight: 700;
 }
 
 .content {
@@ -167,7 +175,7 @@ h1 {
 
 @media (max-width: 768px) {
   .header, .health-section, .main-menu {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -180,14 +188,11 @@ h1 {
   }
 
   .menu-item {
-    width: 100%;
+    width: 45%;
     margin-bottom: 16px;
-  }
+}
 
-  .button {
-    width: 60px;
-    height: 60px;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -208,10 +213,7 @@ h1 {
     padding: 8px;
   }
 
-  .button {
-    width: 50px;
-    height: 50px;
-  }
+
 }
 .wrapper {
   display: flex;
@@ -345,4 +347,171 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+ .notification-area {
+  text-align: center;
+  padding: 10px 0px;
+ }
+
+ p {
+    color: #736b66;
+    letter-spacing: -0.07px;
+    margin-top: 16px;
+    font: 500 18px/29px Arial, sans-serif;
+ }
+
+ .speech-bubble{
+  --arrow-w:0.5em;
+  --arrow-h:1em;
+  --bubble-corners:0;
+  --w:44em;
+  --border-size:3px;
+  --text-color:black;
+  --bubble-color:white;
+  --border-color:black;
+}
+.speech-bubble{
+  text-align:center;
+  font-family:cursive;
+  font-size:20px;
+  font-weight:bold;
+  color:var(--text-color);
+  background:var(--bubble-color);
+  padding:0.5em;
+  position:relative;
+  border-radius:var(--bubble-corners);
+  max-width:var(--w);
+  box-shadow:0 0 0 var(--border-size) var(--border-color);
+}
+
+.speech-bubble h3 {
+  margin: 0px;
+}
+
+.speech-bubble.round{
+  --bubble-corners:1em;
+}
+
+.speech-bubble.circle{
+  --bubble-corners:100%;
+  padding:2em;
+}
+
+
+.speech-bubble:before{
+  border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
+  border-color:var(--border-color) transparent transparent;
+  bottom:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size)); 
+  left:calc(50% - var(--border-size));
+}
+
+.speech-bubble.t:after{
+  border-color:transparent transparent var(--bubble-color);
+  bottom:auto;
+  top:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+}
+
+.speech-bubble.t:before{
+  border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
+  border-color:transparent transparent var(--border-color);
+  bottom:auto;
+  top:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size)); 
+}
+
+.speech-bubble.l:after{
+  border-color:transparent var(--bubble-color) transparent transparent;
+  bottom:auto;
+  border-width:var(--arrow-w) var(--arrow-h);
+  top:calc(50% - var(--arrow-w));
+  left:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+}
+
+.speech-bubble.l:before{
+  border-width:calc(var(--arrow-w) + var(--border-size)) calc(var(--arrow-h) + var(--border-size));
+  border-color:transparent var(--border-color) transparent transparent;
+  bottom:auto;  
+  top:calc(50% - var(--arrow-w) - var(--border-size));
+  left:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size)); 
+}
+
+.speech-bubble.r:after{
+  border-color:transparent transparent transparent var(--bubble-color);
+  bottom:auto;
+  left:auto;
+  border-width:var(--arrow-w) var(--arrow-h);
+  top:calc(50% - var(--arrow-w));
+  right:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+}
+
+.speech-bubble.r:before{
+  border-width:calc(var(--arrow-w) + var(--border-size)) calc(var(--arrow-h) + var(--border-size));
+  border-color:transparent transparent transparent var(--border-color);
+  bottom:auto;
+  left:auto;
+  top:calc(50% - var(--arrow-w) - var(--border-size));
+  right:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size)); 
+}
+
+.speech-bubble.pop{
+  animation-name: pop;
+  animation-duration: 0.5s;
+  animation-timing-function:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+}
+
+.speech-bubble.float{
+  animation-name: float-up;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function:ease;
+}
+
+.speech-bubble.r.float{
+  animation-name: float-left;
+}
+
+.speech-bubble.l.float{
+  animation-name: float-right;
+}
+
+.speech-bubble.t.float{
+  animation-name: float-down;
+}
+
+@keyframes pop {
+  0% {transform: scale(0.8);}
+  80% {transform: scale(1.1);}
+  90% {transform: scale(0.9);}
+  100% {transform: scale(1);}
+}
+
+@keyframes float-up {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(calc(-1 * var(--arrow-h)));}
+}
+
+@keyframes float-left {
+  0% {transform: translateX(0);}
+  50% {transform: translateX(calc(-1 * var(--arrow-h)));}
+}
+
+@keyframes float-right {
+  0% {transform: translateX(0);}
+  50% {transform: translateX(var(--arrow-h));}
+}
+
+@keyframes float-down {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(var(--arrow-h));}
+}
+ 
+.speechcent {
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+}
+
+.health-item h2 {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0;
 }
