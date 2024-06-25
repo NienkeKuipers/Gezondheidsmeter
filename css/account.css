@@ -1,0 +1,192 @@
+/* General styling for the entire app */
+#app.mobile-layout {
+    padding: 15px;
+    background-color: #f7f4f2;
+}
+
+/* Header styling */
+.header {
+    justify-content: left;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-section h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #4f3422;
+    font-weight: 900;
+}
+
+/* Content styling */
+.content {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    color: white;
+    background-color: #44AE62;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #3d9e58;
+}
+
+#change-email-button, #change-password-button {
+    margin-top: 20px;
+    background-color: mediumpurple;
+}
+
+#change-email-button:hover, #change-password-button:hover {
+    background-color: mediumpurple;
+}
+
+/* Email and Password form styling */
+.email-form, .password-form {
+    display: none;
+    margin-top: 1em;
+    background-color: #f7f4f2;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.bmi-link {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.bmi-link .menu-item {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+}
+
+.bmi-link .menu-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.bmi-link .menu-item p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back-button {
+    width: 50px;
+    height: 50px;
+    background-color: #f7f4f2;
+    border-radius: 50%;
+    display: flex;
+    border: 1px solid #4f3422;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 12px;
+}
+
+.back-button:hover {
+    background-color: #f7f4f2;
+}
+
+.back-button i {
+    color: #4f3422;
+    font-size: 24px;
+}
+
+.info-icon {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.popup img {
+    width: 100%;
+    height: auto;
+}
+
+.popup .close-btn {
+    display: block;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.popup .close-btn button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.combined_health {
+    text-align: center;
+    margin: 16px;
+}

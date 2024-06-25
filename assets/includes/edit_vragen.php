@@ -41,11 +41,26 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Question</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
-    <link rel="stylesheet" href="../../css/edit_question.css">
+    <link rel="stylesheet" href="../../css/edit_vraag.css">
+    <style>
+        .back-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 <header>
-    <div class="container">
+    <div class="container container2">
         <nav>
             <ul class="nav-links">
                 <li><a href="../admin/dashboard.php">Dashboard</a></li>
@@ -62,6 +77,7 @@ if (isset($_GET['id'])) {
 </header>
 
 <div class="container">
+    <a href="../admin/vragen.php" class="back-button">Terug naar Vragen</a>
     <h2>Bewerk Vraag</h2>
     <form action="update_question.php" method="post">
         <input type="hidden" name="id" value="<?php echo $questionId; ?>">

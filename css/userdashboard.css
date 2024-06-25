@@ -140,7 +140,6 @@ html, body {
   background: none;
 }
 
-
 .menu-item img {
   width: 40px;
   height: 40px;
@@ -245,9 +244,7 @@ h1 {
   .menu-item {
     width: 45%;
     margin-bottom: 16px;
-}
-
-
+  }
 }
 
 @media (max-width: 480px) {
@@ -267,9 +264,8 @@ h1 {
   .menu-item {
     padding: 8px;
   }
-
-
 }
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -323,7 +319,79 @@ h1 {
 }
 .gauge-center .label, .gauge-center .number {display:block; width: 100%; text-align: center; border:0!important;}
 .gauge-center .label {font-size:0.75em; opacity:0.6; margin:1.1em 0 0.3em 0;}
-.gauge-center .number {font-size:1.2em;}
+.gauge-center .number {font-size:1.2em; opacity: 0; animation: fadeIn 3s ease-in-out forwards;}
+
+@keyframes loadNeedleOnvoldoende {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(26deg); /* Onvoldoende position */
+  }
+}
+
+@keyframes loadNeedleVoldoende {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(89deg); /* Voldoende position */
+  }
+}
+
+@keyframes loadNeedleGoed {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(30deg);
+  }
+  40% {
+    transform: rotate(-30deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(153deg); /* Goed position */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .needle {
   width: 78px;
@@ -337,9 +405,19 @@ h1 {
   bottom: 4px;
   left: 20px;
   transform-origin: 100% 4px;
-  animation: speed 5s infinite;
   box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.38);
-  transform: rotate(70deg); 
+}
+
+.needle.onvoldoende {
+  animation: loadNeedleOnvoldoende 3s ease-in-out forwards;
+}
+
+.needle.voldoende {
+  animation: loadNeedleVoldoende 3s ease-in-out forwards;
+}
+
+.needle.goed {
+  animation: loadNeedleGoed 3s ease-in-out forwards;
 }
 
 .slice-colors .st {
@@ -353,24 +431,29 @@ h1 {
 }
 .slice-colors .st.slice-item:nth-child(1) {
   border-bottom-color: #EB8916;
+  border-bottom-color: #D74141;
   left: -5px;
 }
 .slice-colors .st.slice-item:nth-child(2) {
   border-bottom-color: #15C63C;
+  border-bottom-color: #D74141;
   transform: rotate(145deg);
   transform-origin: right;
-  top: 12px;
-  left: -30px;
+  top: 20px;
+  left: -43px;
 }
 .slice-colors .st.slice-item:nth-child(3) {
   border-bottom-color: #15C63C;
-  transform: rotate(225deg);
+  border-bottom-color: #EB8916;
+  transform: rotate(311deg);
   transform-origin: right;
-  top: -50px;
-  left: 25px;
+  top: -125px;
+  left: 4px;
+  width: 180px;
 }
 .slice-colors .st.slice-item:nth-child(4) {
   border-bottom-color: #D74141;
+  border-bottom-color: #15C63C;
   transform: rotate(35deg);
   transform-origin: right;
   right: -10px;
@@ -378,10 +461,11 @@ h1 {
 }
 .slice-colors .st.slice-item:nth-child(5) {
   border-bottom-color: #D74141;
+  border-bottom-color: #15C63C;
   transform: rotate(28deg);
   transform-origin: right;
-  right: -10px;
-  bottom: -50px;
+  right: 14px;
+  bottom: 11px;
 }
 
 .notification-settings {
@@ -397,25 +481,31 @@ h1 {
   color: #333;
 }
 
+ .notification-settings h2  {
+  text-align:center;
+  margin-right: 43px;
+}
+
+ 
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
 }
- .notification-area {
+.notification-area {
   text-align: center;
   padding: 10px 0px;
- }
+}
 
- p {
-    color: #736b66;
-    letter-spacing: -0.07px;
-    margin-top: 16px;
-    font: 500 18px/29px Arial, sans-serif;
- }
+p {
+  color: #736b66;
+  letter-spacing: -0.07px;
+  margin-top: 16px;
+  font: 500 18px/29px Arial, sans-serif;
+}
 
- .speech-bubble{
+.speech-bubble{
   --arrow-w:0.5em;
   --arrow-h:1em;
   --bubble-corners:0;
@@ -451,7 +541,6 @@ h1 {
   --bubble-corners:100%;
   padding:2em;
 }
-
 
 .speech-bubble:before{
   border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
@@ -558,7 +647,7 @@ h1 {
   0% {transform: translateY(0);}
   50% {transform: translateY(var(--arrow-h));}
 }
- 
+
 .speechcent {
   display: flex;
   justify-content: center;
@@ -570,3 +659,5 @@ h1 {
   font-size: 24px;
   margin: 0;
 }
+
+

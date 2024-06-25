@@ -23,16 +23,29 @@ try {
         .add-button {
             margin-bottom: 20px;
         }
+        .back-button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 <header>
-    <div class="container">
+    <div class="container container2">
         <nav>
             <ul class="nav-links">
                 <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="vragen.php">Vragen</a></li>
-                <li><a href="../includes/logout.php">Uitloggen</a></li>
+                <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -44,6 +57,7 @@ try {
 </header>
 
 <div class="container">
+    <a href="dashboard.php" class="back-button">Back</a>
     <h2>Beheer van Vragen</h2>
     <a href="../includes/add_vraag.php" class="btn btn-primary add-button">Vraag Toevoegen</a>
     <table>
@@ -68,7 +82,6 @@ try {
         </tbody>
     </table>
 </div>
-</body>
 <script>
     const burger = document.querySelector('.burger');
     const navLinks = document.querySelector('.nav-links');
@@ -77,4 +90,5 @@ try {
         navLinks.classList.toggle('toggle');
     });
 </script>
+</body>
 </html>

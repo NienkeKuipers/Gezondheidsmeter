@@ -1,8 +1,17 @@
+<?php
+session_start();  
+    if (isset($_SESSION['user_id'])) {
+        header('Location: assets/pages/gebruikersdashboard.php');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.imgur.com/SN48E3D.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
 
     <title>Gezondheidsmeter</title>

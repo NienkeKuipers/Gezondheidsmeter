@@ -22,10 +22,10 @@ try {
 </head>
 <body>
 <header>
-    <div class="container">
+    <div class="container container2">
         <nav>
             <ul class="nav-links">
-                <li><a href="Dashboard.php">Dashboard</a></li>
+                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="vragen.php">Vragen</a></li>
                 <li><a href="../includes/uitloggen.php">Uitloggen</a></li>
             </ul>
@@ -55,7 +55,7 @@ try {
                     <td data-label="Email"><?php echo $user['email']; ?></td>
                     <td data-label="Action">
                         <a href="../includes/edit.php?id=<?php echo $user['id']; ?>" class="btn btn-primary">Edit</a>
-                        <a href="../includes/delete.php?id=<?php echo $user['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                        <a href="../includes/delete.php?id=<?php echo $user['id']; ?>" class="btn btn-danger" onclick="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?')">Delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

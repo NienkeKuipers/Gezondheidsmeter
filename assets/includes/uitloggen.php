@@ -3,7 +3,7 @@
 session_start();
 
 // Check of de uitlogactie is geactiveerd
-if(isset($_POST['logout'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['logout'])) {
     // Verwijder alle sessievariabelen
     $_SESSION = array();
 
@@ -33,5 +33,12 @@ if(isset($_POST['logout'])) {
 </head>
 <body>
     <p>Signing out...</p>
+    <form id="logout-form" method="POST" action="">
+        <input type="hidden" name="logout" value="1">
+    </form>
+    <script>
+        // Automatically submit the form to trigger the POST request
+        document.getElementById('logout-form').submit();
+    </script>
 </body>
 </html>
